@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECS Reporter</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/materialize.css">
+    <link rel="stylesheet" href="./css/gicons.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/materialize.js"></script>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper white">
+                <a href="#" class="brand-logo right"><img src="./img/logo.png" id="logo"></a>
+                <ul id="nav-mobile" class="left">Generador de Reportes</ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Store user input in var to make table later -->
+    <div id="info_form" class="z-depth-2">
+        <div id="spacer"></div>
+        <div class="input-field col s6">
+            <textarea id="pc_client" class="materialize-textarea area validate" data-length="10" required></textarea>
+            <label for="pc_client">Nombre de Cliente:</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea id="pc_serial" class="materialize-textarea area validate" data-length="30" required></textarea>
+            <label for="pc_serial">Numero de PC:</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea id="pc_problem" class="materialize-textarea area validate" data-length="1500" required></textarea>
+            <label for="pc_problem">Problemas Presentados:</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea id="pc_test" class="materialize-textarea area validate" data-length="1500" required></textarea>
+            <label for="pc_test">Pruebas Realizadas:</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea id="pc_solution" class="materialize-textarea area validate" data-length="1500" required></textarea>
+            <label for="pc_solution">Solución Propuesta:</label>
+        </div>
+        <div id="spacer"></div>
+    </div>
+
+    <!-- Submit buttons (call scripts) -->
+    <div id="sub_buttons">
+        <button class="btn-floating btn-large waves-effect waves-light Green modal-trigger" href="#table_modal" onclick="create_table();"><i class="material-icons">check_circle</i></button>
+        <button class="btn-floating btn-large waves-effect waves-light red" onclick="location.reload();"><i class="material-icons">cancel</i></button>
+    </div>
+
+    <!-- (Hidden by default) Table to be filled with user input -->
+    <div id="table_modal" class="modal">
+        <div class="modal-content">
+            <div id="spawn_table">
+            <table class="responsive-table">
+                <tr><td class="table_title">Nombre del Cliente: </td><td id="table_client"></td></tr>
+                <tr><td class="table_title">Numero de Fabricación: </td><td id="table_serial"></td></tr>
+                <tr><td class="table_title">Problemas Presentados:</td><td></td></tr>
+                <tr><td id="table_problem"></td><td></td></tr>
+                <tr><td class="table_title">Pruebas Realizadas:</td><td></td></tr>
+                <tr><td id="table_test"></td><td></td></tr>
+                <tr><td class="table_title">Soluciónes Propuestas:</td><td></td></tr>
+                <tr><td id="table_solution"></td><td></td></tr>
+            </table>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="print_button" class="waves-effect waves-light btn" onclick="printdiv('spawn_table')"><i class="material-icons">print</i></a>
+        </div>
+    </div>
+</body>
+    
+<footer class="page-footer white z-depth-2">
+    <h6>e-Corp Sistemas S.L. Empresa inscrita en el Registro Mercantil de Barcelona en Tomo:42820 Folio:207 Hoja:414249 Inscripción: 1, CIF B65659369</h6>
+</footer>
+</html>
+
+
+
