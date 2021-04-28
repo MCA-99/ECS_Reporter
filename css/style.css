@@ -2,7 +2,7 @@
     font-family: Roboto;
     src: url(../font/Roboto-Regular.ttf);
 }
-@page { size: auto;  margin: 0mm; }
+@page { size: auto;  margin: 5mm; }
 * {
     font-family: Roboto;
 }
